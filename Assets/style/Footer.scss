@@ -1,0 +1,136 @@
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize){
+    $addSize: $pcSize - $mobSize;
+    $maxWidth:$maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+.footer,
+.footer__about-menu,
+.footer-about,
+.footer-menu__bloks,
+.footer__contacts-confed
+{
+    display: flex;
+}
+.footer{
+    height: 260px;
+    margin-top: 104px;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer__about-menu{
+    width: 701px;
+    justify-content: space-between;
+}
+.footer-about,
+.footer-contacts,
+.footer__contacts-confed{
+flex-direction: column;
+}
+.footer-about__title,
+.footer-menu__title,
+.footer-contacts__title{
+    @include adaptiv-font(14,12);
+    font-weight: 700;
+    font-size: 14px;
+    color:  rgba(101, 101, 102, 1);
+    padding-bottom: 20px;
+}
+.point-footer{
+    @include adaptiv-font(16,14);
+    padding-top: 10px;
+    cursor: pointer;
+    &:first-child{
+        padding: 0;
+    }
+    &:hover{
+        @include adaptiv-font(17,15);
+    }
+}
+.point-paddingsmall{
+    padding: 0;
+}
+.point-smallfooter{
+    display: none;
+}
+.footer-menu__bloks{
+    width: 408px;
+    justify-content: space-between;
+}
+
+.footer__contacts-confed{
+    height: 240px;
+    justify-content: space-between;
+    text-align: end;
+    cursor: pointer;
+}
+.footer-contacts__network{
+    padding: 24px 0px 22px 0px;
+    .footer-contacts__img{
+        padding-right: 14px;
+        cursor: pointer;
+        &:last-child{
+            padding: 0;
+        }
+    }
+}
+.footer-confed{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+}
+.footer-confed__politics{
+    width: 190px;
+    margin-left: 90px;
+    border-bottom: 1px solid $maincolor;
+}
+
+@media (max-width: 1100px) {
+    .footer{
+        flex-wrap: wrap;
+    }
+    .footer__about-menu{
+        width: 100%;
+    }
+    .footer__contacts-confed{
+        text-align:start
+    }
+    .footer-about{
+        margin-bottom: 30px;
+    }
+    .footer-confed__politics{
+        margin-left: 0px;
+    }
+}
+@media (max-width: 640px) {
+    .footer{
+        padding-left: 15px;
+        height: 615px;
+        background-color: #1E1E1E;
+        margin-top: 34px;
+    }
+    .footer__about-menu{
+        flex-wrap: wrap;
+    }
+    .footer-menu{
+        margin-bottom: 30px;
+    }
+    .footer-menu__bloks{
+        width: 89vw;
+    }
+    .footer-menu__blok1{
+        margin-right: 48px;
+    }
+    .point-smallfooter{
+        display: block;
+    }
+    .point-smallfooter2{
+        display: none;
+    }
+    .footer__contacts-confed{
+        height: 198px;
+    }
+    .footer-contacts__network{
+        padding: 10px 0px 12px 0px;
+    }
+}

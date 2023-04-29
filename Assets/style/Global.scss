@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    color: white;
+}
+body{
+	width: 79%;
+	margin: 0 auto;
+	background: #1E1E1E;
+}
+a{
+  text-decoration: none;
+  color: $maincolor;
+}
+@font-face {
+    font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 300;
+	src: local(''),
+		url('../fonts/Montserrat-Light.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		url('../fonts/Montserrat-Light.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+    font-family: 'Montserrat';
+	font-style: normal;
+	font-weight: 400;
+	src: local(''),
+		url('../fonts/Montserrat-Regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		url('../fonts/Montserrat-Regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+    font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	src: local(''),
+		url('../fonts/Inter-Regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		url('../fonts/Inter-Regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+    font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	src: local(''),
+         url('../fonts/Inter-Medium.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		 url('../fonts/Inter-Medium.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+  font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	src: local(''),
+    url('../fonts/Inter-Bold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/Inter-Bold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@media (max-width: 1100px) {
+	body{
+		width: 85%;
+	}
+}
+@media (max-width: 960px) {
+	body{
+		width: 92%;
+	}
+}
+@media (max-width: 640px) {
+	body{
+		width: 100%;
+	}
+}

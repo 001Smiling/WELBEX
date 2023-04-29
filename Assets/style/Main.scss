@@ -1,0 +1,248 @@
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize){
+    $addSize: $pcSize - $mobSize;
+    $maxWidth:$maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+.main {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 94px;
+}
+
+.main-slogan__title{
+    @include adaptiv-font(48,36);
+    line-height: 121%;
+}
+.main-slogan__title{
+    width: 362px;
+}
+.main-slogan__title-span{
+    font-weight: 900;
+    text-transform: uppercase;
+    background: linear-gradient(92deg, #FCB045 27.14%, #FF3F78 121.36%), #E4E5EA;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.main-slogan__subtitle{
+    width: 275px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    line-height: 122%;
+    margin-top: 30px;
+}
+.main-advantage{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.main-advantage__title{
+    width: 291px;
+    @include adaptiv-font(18,14);
+    padding-top: 15px;
+    text-align: end;
+}
+
+.main-advantage__title-span{
+    text-transform: uppercase;
+    background: linear-gradient(92deg, rgba(252, 176, 69, 1) 1%, rgba(253, 29, 29, 1) 30%,rgba(253, 29, 29, 1) 43.6%, rgba(252, 176, 69, 1) 44%, rgba(253, 29, 29, 1) 130.36%), #E4E5EA;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+.advantage-points{
+    width: 291px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: end;
+    margin-top: 40px;
+}
+.advantage-points__point{
+    flex: 2 50%;
+    &:nth-child(n+3){
+        margin-top: 30px;
+    }
+}
+.main-smalladvantages{
+    display: none;
+}
+.main-advantage__point-title{
+    font-weight: 500;
+    @include adaptiv-font(18,14);
+    letter-spacing: 1px;
+}
+.main-advantage__point-subtitle{
+    font-family: 'Montserrat', sans-serif;
+    @include adaptiv-font(18,12);
+    line-height: 122%;
+}
+
+.main-advantage__btn{
+    font-weight: 500;
+    font-size: 16px;
+    width: 262px;
+    height: 61px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(64, 119, 243, 1);
+    margin-top: 61px;
+    cursor: pointer;
+    &:hover{
+        animation: pulses 2s infinite;
+          @keyframes pulses {
+            0% {
+              -moz-box-shadow: 0 0 0 0 rgba(64, 119, 243, 1);
+              box-shadow: 0 0 0 0 rgba(64, 119, 243, 1);
+            }
+            70% {
+                -moz-box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+                box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+            }
+            100% {
+                -moz-box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+                box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+            }
+          }
+    }
+    &:active{
+        background-color: rgb(18, 54, 137);
+    }
+}
+.main-sm-circle5{
+    content: "";
+    position: absolute;
+    width: 311px;
+    height: 311px;
+    background: rgba(150, 26, 26, 1);
+    opacity: 0.5;
+    filter: blur(196px);
+    z-index: -1;
+    left: -15%;
+    top: 30%;
+}
+.main-bg-circle4{
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 28px;
+    border-radius: 50%;
+    background: radial-gradient(64% 64% at 27.25% 26.5%, rgba(255, 208, 208, 0.48) 0%, rgba(212, 93, 93, 0.248) 59.67%, rgba(167, 49, 49, 0.264) 78.59%, rgba(130, 25, 25, 0.232) 100%);
+    box-shadow: 3px 6px 27px -10px rgba(223, 125, 125, 0.25);
+    filter: blur(2.5px);    
+    z-index: 0;
+    left: 58.5%;
+    // bottom: 34%;
+}
+@media (max-width: 960px) {
+    .main-slogan__title{
+        width: 47vw;
+    }
+    .advantage-points{
+        width: 35vw;
+    }
+    .main-bg-circle4{
+        left: 48.5%;
+    }
+}
+@media (max-width: 640px) {
+    .main {
+        margin: 40px 0px 0px 15px;
+        flex-direction: column;
+    }
+    .advantage-points,
+    .main-advantage__btn{
+        display: none;
+    }
+    .main-advantage{
+        align-items: flex-start;
+    }
+    .main-advantage__title{
+        text-align: start;
+        padding: 45px 0px 20px 0px;
+    }
+    .main-smalladvantages{
+        display: flex;
+        padding-bottom: 25px;  
+        // margin-bottom: 40px;
+    }
+    .main-smalladvantages__title{
+        font-size: 13px;
+        margin-left: 15px;
+    }
+    .main-smalladvantages__container2{
+        margin-left: 10px;
+    }
+    .main-smalladvantages__container1,
+    .main-smalladvantages__container2{
+        list-style: none;
+    }
+    .main-smalladvantages__title{
+        background: url(../img/Line.png) no-repeat 7px 7px transparent;
+        margin: 0;
+        padding: 0px 0px 1px 24px;
+        vertical-align: middle;
+    }
+    .main-bg-circle4{
+        display: none;
+    }
+    .main-sm-circle1{
+        content: "";
+        position: absolute;
+        width: 259px;
+        height: 259px;
+        border-radius: 50%;
+        background: rgba(131, 58, 180, 1);
+        opacity: 0.5;
+        filter: blur(196px);
+        z-index: -1;
+        right: 0%;
+    }
+    .main-sm-circle2{
+        content: "";
+        position: absolute;
+        width: 39px;
+        height: 39px;
+        border-radius: 50%;
+        background: radial-gradient(rgb(214, 196, 226) 50%, rgba(131, 58, 180, 1));;
+        filter: blur(15px);
+        z-index: -1;
+        right: 0%;
+    }
+    .main-sm-circle3{
+        content: "";
+        position: absolute;
+        width: 259px;
+        height: 259px;
+        border-radius: 50%;
+        background: rgba(150, 26, 26, 1);
+        opacity: 0.5;
+        filter: blur(196px);
+        z-index: -1;
+        left: 0%;
+    }
+    .main-sm-circle4{
+        content: "";
+        position: absolute;
+        width: 39px;
+        height: 39px;
+        border-radius: 50%;
+        background: radial-gradient(64% 64% at 27.25% 26.5%, rgba(255, 208, 208, 0.48) 0%, rgba(212, 93, 93, 0.248) 59.67%, rgba(167, 49, 49, 0.264) 78.59%, rgba(130, 25, 25, 0.232) 100%);
+        box-shadow: 3px 6px 27px -10px rgba(223, 125, 125, 0.25);
+        filter: blur(5px);
+        z-index: -1;
+        left: 5%;
+    }
+    .main-sm-circle5{
+        position: absolute;
+        width: 59px;
+        height: 159px;
+        background: $maincolor;
+        opacity: 0.5;
+        filter: blur(96px);
+        z-index: -1;
+        left: 0%;
+        top: 0%;
+    }
+}
